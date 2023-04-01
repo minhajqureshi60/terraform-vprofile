@@ -60,11 +60,11 @@ variable "Zone1" {
 }
 
 variable "Zone2" {
-  default = "ap-northeast-1b"
+  default = "ap-northeast-1c"
 }
 
 variable "Zone3" {
-  default = "ap-northeast-1c"
+  default = "ap-northeast-1d"
 }
 
 variable "VpcCIDR" {
