@@ -18,7 +18,7 @@ resource "aws_db_instance" "vprofile-rds" {
   engine                 = "mysql"
   engine_version         = "5.8.0"
   instance_class         = "db.t2.micro"
-  name                   = var.dbname
+  db_name                   = var.dbname
   username               = var.dbuser
   password               = var.dbpass
   parameter_group_name   = "default.mysql5.8"
@@ -43,7 +43,7 @@ resource "aws_elasticache_cluster" "vprofile-cache" {
 resource "aws_mq_broker" "vprofile-rmq" {
   broker_name        = "vprofile-rmq"
   engine_type        = "ActiveMQ"
-  engine_version     = "5.17.0"
+  engine_version     = "5.17.2"
   host_instance_type = "mq.t2.micro"
   security_groups    = [aws_security_group.vprofile-backend-sg.id]
   subnet_ids         = [module.vpc.private_subnets[0]]
